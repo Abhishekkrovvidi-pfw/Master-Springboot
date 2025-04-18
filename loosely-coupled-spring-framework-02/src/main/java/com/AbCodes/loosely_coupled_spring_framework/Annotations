@@ -1,0 +1,21 @@
+1.@Component :- An instance of class will be managed by Spring framework.
+2.@ComponentSCan:- It is used to tell the config file to look for all the sprig beans annotated using @Component.If we want
+Spring to scan a specific package we can specify package name explicitly @componentscan("PackageName").If no package is mentioned
+Spring framework takes the default package where the @ComponentScan is present
+3.Dependency Injection:- Identify Beans, their dependencies and wire them together @Autowired.Provides IOC(inversion of control).
+4.Spring Beans :- Any object managed by Spring is known as A bean.
+5.IOC container: - Application Context manages the lifecycle of Beans and dependencies
+types:
+    a) Application context is a complex approach(preffered and widely used)
+    b) bean factory is simpler features  but is rarely used.
+6.Autowiring:- process of wiring in dependencies for a spring bean.
+
+
+@COmponent vs @Bean
+@Component:                                         @Bean:
+can be used on any java class                       Typically used on methods in Spring configuration classes
+easy and just use annotation                        programmer needs to write the code and define classes to tell spring that its a bean
+    Autowiring-can use Constructor injection        Autowiring- either use method call or use method parameters
+                    Setter Injection
+                    Field Injection
+Who creates bean? Spring Framework                      Programmer Creates Beans and Custom Business logic
