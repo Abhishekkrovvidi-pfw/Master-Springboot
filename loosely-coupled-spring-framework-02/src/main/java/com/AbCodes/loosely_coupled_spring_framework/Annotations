@@ -19,3 +19,52 @@ easy and just use annotation                        programmer needs to write th
                     Setter Injection
                     Field Injection
 Who creates bean? Spring Framework                      Programmer Creates Beans and Custom Business logic
+7. @Lazy
+It is used to initialize a bean in a Lazy manner. We can use @ lazy on any class which uses @Component or @Bean
+this approach is not recommended and not frequently used.It can also be used on @configuration class.
+If we have lot of Complex logic we can think about using it as an option.
+Eager Initialization vs Lazy Initialization
+Eager Initialization is always recommended.Becoz if there are any errors in the config. We can discover them immediately.
+
+Spring Bean Scopes
+1.Singleton - one object instance per spring ioc container
+2.Prototype - Possible many object instances per spring IOC Container
+Difference BW normal and Prototype class
+@Component
+class NormalClass {
+}
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+@Component
+class PrototypeClass{
+
+}
+Output:
+com.AbCodes.loosely_coupled_spring_framework.example.e1.NormalClass@72d1ad2e
+com.AbCodes.loosely_coupled_spring_framework.example.e1.NormalClass@72d1ad2e
+com.AbCodes.loosely_coupled_spring_framework.example.e1.PrototypeClass@2d7275fc
+com.AbCodes.loosely_coupled_spring_framework.example.e1.PrototypeClass@399f45b1
+com.AbCodes.loosely_coupled_spring_framework.example.e1.PrototypeClass@38c6f217
+
+Scopes are applicable for only web aware SpringApplicationContext
+.Request - one object instance per single http request.
+.Session- one object instance per single http session.
+.Application - one object instance per entire application runtime.
+.Websocket - one object instance per websocket instance.
+
+Java Singleton vs Spring Singleton
+when it comes to Spring singleton we have one object instance per springIOC container. its rarelyused.
+java singleton have one object instance per JVM.Frequently used.
+Mostly they both are same as long as only one IOC container is used
+
+@POstConstruct - It is used on a method to execute after dependecy Injection (Autowiring) is done.
+@PreDestroy -If a bean is being removed from the IOC container we use this annotation.
+
+Jakarta Enterprise Edition(JakartaEE) previosly known as J2EE , javaEE.
+its an official Ecliple rebranding and is  being seperated from JDK.
+j2Ee used to be a part of JDK. now its seperated.
+things which come under JakartaEE are
+1.JSP( jakarta servlets pages)_ used as views in web app
+2.CDI(jakarta context dependency injection) its an Interface Spring implements CDI.(Inject similar to Autowired in spring, Qualifier, Scope and etc)
+3.JPA ( jakarta Persistance) -used to communicate with relational database
+4.jax-Rs(jakarta RESTful web services0
+5.EJB(jakarta Enterprise Bean)
