@@ -1,0 +1,14 @@
+Lets assume we have different environments such as
+dev env
+QA env
+Test env
+Stage env
+Prod env
+We can use profiles for this kind of scenario. so we create different application.properties files.
+there are different levels
+trace(prints everything in logs)
+debug
+info
+warning
+error(only errors are printed in logs)
+off(it turns off logs)
